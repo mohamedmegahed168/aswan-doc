@@ -26,7 +26,7 @@ function HomePage() {
   async function signIn() {
     console.log(auth.currentUser);
     const userCredential = await signInAnonymously(auth);
-    router.push(`/${newDoc.id}`);
+    router.push("/dashboard");
   }
   useEffect(() => {
     const unsubscribe = onSnapshot(namesRefrence, (snapshot) => {
