@@ -35,14 +35,9 @@ function HomePage() {
       email,
       password
     );
-    router.push(`/dashboard?user=${userCredentials.user.email}`);
+    router.push(`/dashboard`);
   }
-  /* useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  });*/
+
   return (
     <div className="flex flex-col items-center gap-8 h-screen">
       {" "}
