@@ -1,12 +1,39 @@
 "use client";
 import { signOut, onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/storage/firebase";
+import { auth, db } from "@/storage/firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function DashboardPage() {
   const [user, setUser] = useState(null);
+  const [city, setCity] = useState("");
+  const [speciality, setSpeciality] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [doctors, setDoctors] = useState([]);
   const router = useRouter();
+
+  useEffect(() => {
+    const doctorsReference = collection(db, "doctors");
+    const q = query(
+      doctorsReference,
+      where("location", "==", city),
+      where("speciality", "==", speciality)
+    );
+    async function fetchDoctors() {
+      if (city.trim() !== "" && speciality.trim() !== "") {
+        setLoading(true);
+        const queryDocuments = await getDocs(q);
+        const doctorsList = [];
+        queryDocuments.forEach((doc) => {
+          doctorsList.push(doc.data());
+        });
+        setDoctors(doctorsList);
+        setLoading(false);
+      }
+    }
+    fetchDoctors();
+  }, [city, speciality]);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
@@ -20,9 +47,11 @@ function DashboardPage() {
   async function handleSignOut() {
     await signOut(auth);
   }
+
   if (!user) {
     return <div>Redirecting...</div>;
   }
+
   return (
     <div>
       <h1>Dashboard Page</h1>
@@ -33,6 +62,38 @@ function DashboardPage() {
       >
         Sign Out
       </button>
+      <select
+        className="border border-slate-400 rounded"
+        onChange={(e) => setCity(e.target.value)}
+      >
+        <option value=""> Select City </option>
+        <option value="Komombo"> Komombo </option>
+        <option value="aswan"> Aswan </option>
+        <option value="daraw"> Daraw </option>
+      </select>
+      <select
+        className="border border-slate-400 rounded"
+        onChange={(e) => setSpeciality(e.target.value)}
+      >
+        <option value=""> Select Speciality </option>
+        <option value="Cardiologist"> Cardiologist </option>
+        <option value="Dermatologist"> Dermatologist </option>
+        <option value="Pediatrician"> Pediatrician </option>
+      </select>
+      <div>
+        {loading ? (
+          <p> loading.......</p>
+        ) : (
+          doctors.map((doctor) => (
+            <div key={doctor.name}>
+              <h2> Name: {doctor.name} </h2>
+              <p> Speciality: {doctor.speciality} </p>
+              <p> Location: {doctor.location} </p>
+              <p> Availability: {doctor.availability} </p>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }
