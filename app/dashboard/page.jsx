@@ -17,10 +17,11 @@ function DashboardPage() {
     const doctorsReference = collection(db, "doctors");
     const q = query(
       doctorsReference,
-      where("location", "==", city),
+      where("city", "==", city),
       where("speciality", "==", speciality)
     );
     async function fetchDoctors() {
+      console.log(speciality);
       if (city.trim() !== "" && speciality.trim() !== "") {
         setLoading(true);
         const queryDocuments = await getDocs(q);
@@ -28,6 +29,7 @@ function DashboardPage() {
         queryDocuments.forEach((doc) => {
           doctorsList.push(doc.data());
         });
+        console.log(doctorsList);
         setDoctors(doctorsList);
         setLoading(false);
       }
@@ -64,7 +66,8 @@ function DashboardPage() {
       </button>
       <select
         className="border border-slate-400 rounded"
-        onChange={(e) => setCity(e.target.value)}
+        onChange={(e) => (setCity(e.target.value), setSpeciality(""))}
+        value={city}
       >
         <option value=""> Select City </option>
         <option value="Komombo"> Komombo </option>
@@ -74,6 +77,7 @@ function DashboardPage() {
       <select
         className="border border-slate-400 rounded"
         onChange={(e) => setSpeciality(e.target.value)}
+        value={speciality}
       >
         <option value=""> Select Speciality </option>
         <option value="Cardiologist"> Cardiologist </option>
@@ -88,8 +92,7 @@ function DashboardPage() {
             <div key={doctor.name}>
               <h2> Name: {doctor.name} </h2>
               <p> Speciality: {doctor.speciality} </p>
-              <p> Location: {doctor.location} </p>
-              <p> Availability: {doctor.availability} </p>
+              <p> City: {doctor.location} </p>
             </div>
           ))
         )}

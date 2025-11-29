@@ -19,7 +19,6 @@ if (process.env.NODE_ENV === "development") {
   if (typeof window!== "undefined" && window.location.hostname === "localhost") {
   connectFirestoreEmulator(db, "localhost", 8080);
   connectAuthEmulator(auth, "http://localhost:9099");
-  console.log("Connected to Firebase Emulators");
-  console.log("connectAuthEmulator")
+ 
 }}
 export default app;

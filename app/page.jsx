@@ -4,7 +4,6 @@ import { collection, setDoc, doc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { db } from "../storage/firebase";
 import { useEffect } from "react";
-
 function HomePage() {
   const router = useRouter();
   function signUp() {
@@ -13,36 +12,6 @@ function HomePage() {
   function signIn() {
     router.push("/signin");
   }
-  const doctors = [
-    {
-      name: "Peter Romany",
-      speciality: "Cardiologist",
-      location: "Komombo",
-      availability: "Mon-Fri, 9am-5pm",
-    },
-    {
-      name: "Abdo Mohsen",
-      speciality: "Dermatologist",
-      location: "Komombo",
-      availability: "Tue-Sat, 10am-4pm",
-    },
-    {
-      name: "Amr Ahmed",
-      speciality: "Pediatrician",
-      location: "Komombo",
-      availability: "Mon-Fri, 8am-3pm",
-    },
-  ];
-  const doctorsRef = collection(db, "doctors");
-  async function addDoctors() {
-    for (const doctor of doctors) {
-      const docRef = doc(doctorsRef);
-      await setDoc(docRef, doctor);
-    }
-  }
-  useEffect(() => {
-    addDoctors();
-  }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-8 h-screen">
