@@ -10,7 +10,7 @@ function DashboardPage() {
   const [city, setCity] = useState("");
   const [speciality, setSpeciality] = useState("");
   const [loading, setLoading] = useState(false);
-  const [doctors, setDoctors] = useState([]);
+  const [doctors, setDoctors] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -21,7 +21,6 @@ function DashboardPage() {
       where("speciality", "==", speciality)
     );
     async function fetchDoctors() {
-      console.log(speciality);
       if (city.trim() !== "" && speciality.trim() !== "") {
         setLoading(true);
         const queryDocuments = await getDocs(q);
@@ -29,7 +28,6 @@ function DashboardPage() {
         queryDocuments.forEach((doc) => {
           doctorsList.push(doc.data());
         });
-        console.log(doctorsList);
         setDoctors(doctorsList);
         setLoading(false);
       }
@@ -71,8 +69,8 @@ function DashboardPage() {
       >
         <option value=""> Select City </option>
         <option value="Komombo"> Komombo </option>
-        <option value="aswan"> Aswan </option>
-        <option value="daraw"> Daraw </option>
+        <option value="Aswan"> Aswan </option>
+        <option value="Daraw"> Daraw </option>
       </select>
       <select
         className="border border-slate-400 rounded"
@@ -83,16 +81,21 @@ function DashboardPage() {
         <option value="Cardiologist"> Cardiologist </option>
         <option value="Dermatologist"> Dermatologist </option>
         <option value="Pediatrician"> Pediatrician </option>
+        <option value="Internal Medicine"> Internal Medicine </option>
       </select>
       <div>
         {loading ? (
           <p> loading.......</p>
+        ) : doctors === null ? (
+          <p> Search For Doctors IN Your Area </p>
+        ) : doctors.length === 0 ? (
+          <p> No Doctors Were Found </p>
         ) : (
           doctors.map((doctor) => (
             <div key={doctor.name}>
               <h2> Name: {doctor.name} </h2>
               <p> Speciality: {doctor.speciality} </p>
-              <p> City: {doctor.location} </p>
+              <p> City: {doctor.city} </p>
             </div>
           ))
         )}

@@ -1,9 +1,7 @@
 "use client";
-import { collection, setDoc, doc } from "firebase/firestore";
-
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { db } from "../storage/firebase";
-import { useEffect } from "react";
+
 function HomePage() {
   const router = useRouter();
   function signUp() {
@@ -29,6 +27,9 @@ function HomePage() {
       >
         Sign In
       </button>
+      <div className="bg-gray-200 rounded-lg h-64 p-8">
+        <span className="text-5xl"> 🔍 </span>
+      </div>
     </div>
   );
 }
