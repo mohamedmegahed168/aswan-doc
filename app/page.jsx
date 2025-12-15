@@ -1,37 +1,26 @@
 "use client";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Services from "./components/Services";
+import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
 
-function HomePage() {
-  const router = useRouter();
-  function signUp() {
-    router.push("/signup");
-  }
-  function signIn() {
-    router.push("/signin");
-  }
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col items-center gap-8 h-screen">
-      <h1 className="text-4xl font-bold"> Thats Where Everthing Starts </h1>
-      <button
-        className="w-40 h-10 text-white bg-slate-700 rounded-xl font-semibold hover:bg-slate-900 cursor-pointer transition-all"
-        onClick={signUp}
-      >
-        {" "}
-        Sign Up{" "}
-      </button>
-      <button
-        className="cursor-pointer text-slate-700 w-40 h-10 hover:bg-slate-50 transition-all rounded-xl border border-slate-300 font-semibold"
-        onClick={signIn}
-      >
-        Sign In
-      </button>
-      <div className="bg-gray-200 rounded-lg h-64 p-8">
-        <span className="text-5xl"> 🔍 </span>
-      </div>
+    <div className="flex flex-col">
+      <Navbar />
+      <main className="flex-1">
+        <Hero />
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center mt-12 tracking-tight">
+            Discover From More Than{" "}
+            <span className="text-[var(--color-primary)]">+200</span> Doctors
+          </h2>
+        </div>
+        <Services />
+        <Testimonials />
+      </main>
+      <Footer />
     </div>
   );
 }
-
-export default HomePage;

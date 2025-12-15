@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { db, auth } from "@/storage/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { motion, useReducedMotion } from "framer-motion";
 
 function SignIn() {
   const router = useRouter();
@@ -17,6 +18,8 @@ function SignIn() {
     );
     router.push("/dashboard");
   }
+  const reduce = useReducedMotion();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md bg-white w-full rounded-lg shadow-xl  p-8">
@@ -50,12 +53,14 @@ function SignIn() {
               className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 transition"
             />
           </div>
-          <button
+          <motion.button
             type="submit"
-            className="w-full text-white bg-[#2cacd5] px-2 py-3 rounded-xl cursor-pointer"
+            whileHover={reduce ? {} : { scale: 1.02 }}
+            whileTap={reduce ? {} : { scale: 0.98 }}
+            className="w-full text-white bg-[var(--color-primary)] px-2 py-3 rounded-xl cursor-pointer"
           >
             Sign In
-          </button>
+          </motion.button>
         </form>
       </div>
     </div>

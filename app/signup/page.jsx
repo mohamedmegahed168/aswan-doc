@@ -2,6 +2,7 @@
 import { db, auth } from "@/storage/firebase";
 import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { motion, useReducedMotion } from "framer-motion";
 function SignUp() {
   const router = useRouter();
   async function handleSignUp(event) {
@@ -11,6 +12,8 @@ function SignUp() {
     await createUserWithEmailAndPassword(auth, email, password);
     router.push("/dashboard");
   }
+  const reduce = useReducedMotion();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-md">
@@ -62,12 +65,14 @@ function SignUp() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
               />
             </div>
-            <button
+            <motion.button
               type="submit"
-              className="w-full bg-[#2cacd5] text-white py-3 rounded-xl font-semibold hover:bg-[#0f566d] active:scale-95 transition-all cursor-pointer"
+              whileHover={reduce ? {} : { scale: 1.02 }}
+              whileTap={reduce ? {} : { scale: 0.98 }}
+              className="w-full bg-[var(--color-primary)] text-white py-3 rounded-xl font-semibold hover:bg-[var(--primary-dark)] active:scale-95 transition-all cursor-pointer"
             >
               Sign Up
-            </button>
+            </motion.button>
           </form>
         </div>
       </div>
