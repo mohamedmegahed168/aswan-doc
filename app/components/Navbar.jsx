@@ -6,15 +6,18 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
+  function closeMenu() {
+    setOpen(false);
+  }
 
   return (
-    <nav className="fixed top-0 z-50 w-full backdrop-blur bg-white/70 shadow-sm">
+    <nav className="fixed top-0 z-50 w-full  bg-white shadow-sm rounded-b-lg">
       <div className="max-w-7xl mx-auto h-16 flex items-center justify-between px-6">
         <motion.div
           whileHover={reduce ? {} : { scale: 1.03 }}
-          className="text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--color-primary-dark)]"
+          className="text-2xl md:text-3xl font-bold tracking-tight"
         >
-          <Link href="/">Aswan-Doc</Link>
+          <Link href="/">Aswan-Med</Link>
         </motion.div>
 
         <div className="hidden md:flex items-center gap-8 font-medium text-gray-700">
@@ -66,7 +69,7 @@ export default function Navbar() {
         <button
           className="md:hidden p-2 rounded-md"
           aria-label="Open menu"
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((prev) => !prev)}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
@@ -92,21 +95,21 @@ export default function Navbar() {
               <Link
                 href="#home"
                 className="py-2 hover:text-[var(--color-primary)]"
-                onClick={() => setOpen(false)}
+                onClick={closeMenu}
               >
                 Home
               </Link>
               <Link
                 href="#services"
                 className="py-2 hover:text-[var(--color-primary)]"
-                onClick={() => setOpen(false)}
+                onClick={closeMenu}
               >
                 Services
               </Link>
               <Link
                 href="#about"
                 className="py-2 hover:text-[var(--color-primary)]"
-                onClick={() => setOpen(false)}
+                onClick={closeMenu}
               >
                 About
               </Link>
@@ -115,14 +118,14 @@ export default function Navbar() {
                   href="/signup"
                   className="flex-1 px-4 py-2 rounded-lg text-white text-center"
                   style={{ background: "var(--color-primary)" }}
-                  onClick={() => setOpen(false)}
+                  onClick={closeMenu}
                 >
                   Sign Up
                 </Link>
                 <Link
                   href="/signin"
                   className="flex-1 px-4 py-2 rounded-lg border text-center"
-                  onClick={() => setOpen(false)}
+                  onClick={closeMenu}
                 >
                   Sign In
                 </Link>

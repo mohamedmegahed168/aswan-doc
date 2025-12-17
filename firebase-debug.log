@@ -74,3 +74,176 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.0.1+8-LTS-27, mixed mode, sharing)
 
 Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
  
+[debug] [2025-12-15T15:26:21.133Z] Received signal SIGHUP 1
+[info]  
+[info] i  emulators: Received SIGHUP for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGHUP signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  hosting: Stopping Hosting Emulator {"metadata":{"emulator":{"name":"hosting"},"message":"Stopping Hosting Emulator"}}
+[info] i  firestore: Stopping Firestore Emulator {"metadata":{"emulator":{"name":"firestore"},"message":"Stopping Firestore Emulator"}}
+[warn] !  Firestore Emulator has exited upon receiving signal: SIGINT 
+[info] i  auth: Stopping Authentication Emulator {"metadata":{"emulator":{"name":"auth"},"message":"Stopping Authentication Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[debug] [2025-12-15T15:26:21.642Z] Emulator locator file path: C:\Users\MOHAME~1\AppData\Local\Temp\hub-aswan-doc.json
+[debug] [2025-12-16T11:41:08.556Z] ----------------------------------------------------------------------
+[debug] [2025-12-16T11:41:08.562Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Mohamed Megahed\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2025-12-16T11:41:08.563Z] CLI Version:   14.25.0
+[debug] [2025-12-16T11:41:08.563Z] Platform:      win32
+[debug] [2025-12-16T11:41:08.563Z] Node Version:  v22.17.0
+[debug] [2025-12-16T11:41:08.564Z] Time:          Tue Dec 16 2025 13:41:08 GMT+0200 (Eastern European Standard Time)
+[debug] [2025-12-16T11:41:08.564Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-12-16T11:41:08.567Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-12-16T11:41:09.227Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-16T11:41:09.227Z] > authorizing via signed-in user (m.megahed168@gmail.com)
+[debug] [2025-12-16T11:41:09.564Z] java version "25.0.1" 2025-10-21 LTS
+
+[debug] [2025-12-16T11:41:09.565Z] Java(TM) SE Runtime Environment (build 25.0.1+8-LTS-27)
+Java HotSpot(TM) 64-Bit Server VM (build 25.0.1+8-LTS-27, mixed mode, sharing)
+
+[debug] [2025-12-16T11:41:09.618Z] Parsed Java major version: 25
+[info] i  emulators: Starting emulators: auth, firestore, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore, hosting"}}
+[debug] [2025-12-16T11:41:09.646Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-16T11:41:09.646Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-16T11:41:09.647Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-16T11:41:09.647Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-16T11:41:09.647Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-16T11:41:09.647Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5032}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-12-16T11:41:09.660Z] Emulator locator file path: C:\Users\MOHAME~1\AppData\Local\Temp\hub-aswan-doc.json
+[debug] [2025-12-16T11:41:09.660Z] [hub] writing locator at C:\Users\MOHAME~1\AppData\Local\Temp\hub-aswan-doc.json
+[debug] [2025-12-16T11:41:09.689Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-12-16T11:41:09.689Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2025-12-16T11:41:09.689Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\Mohamed Megahed\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.19.8.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","aswan-doc","--rules","C:\\Users\\Mohamed Megahed\\Desktop\\aswan-doc\\firestore.rules","--single_project_mode",true],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false,"shell":false,"port":8080} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\Mohamed Megahed\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.19.8.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"aswan-doc\",\"--rules\",\"C:\\\\Users\\\\Mohamed Megahed\\\\Desktop\\\\aswan-doc\\\\firestore.rules\",\"--single_project_mode\",true],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":8080}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2025-12-16T11:41:09.739Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-12-16T11:41:09.739Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] +  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2025-12-16T11:41:27.541Z] Checked if tokens are valid: false, expires at: 1765797932099
+[debug] [2025-12-16T11:41:27.541Z] Checked if tokens are valid: false, expires at: 1765797932099
+[debug] [2025-12-16T11:41:27.542Z] > refreshing access token with scopes: []
+[debug] [2025-12-16T11:41:27.543Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-16T11:41:27.543Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-16T11:41:27.837Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-16T11:41:27.838Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-16T11:41:27.851Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/aswan-doc/sites 
+[debug] [2025-12-16T11:41:29.073Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/aswan-doc/sites 200
+[debug] [2025-12-16T11:41:29.074Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/aswan-doc/sites {"sites":[{"name":"projects/aswan-doc/sites/aswan-doc","defaultUrl":"https://aswan-doc.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2025-12-16T11:41:29.074Z] Checked if tokens are valid: true, expires at: 1765888886838
+[debug] [2025-12-16T11:41:29.074Z] Checked if tokens are valid: true, expires at: 1765888886838
+[debug] [2025-12-16T11:41:29.074Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc/webApps/-/config [none]
+[debug] [2025-12-16T11:41:29.917Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc/webApps/-/config 200
+[debug] [2025-12-16T11:41:29.917Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc/webApps/-/config {"projectId":"aswan-doc","appId":"1:460513740798:web:8e6333a68e2639b518e2af","storageBucket":"aswan-doc.firebasestorage.app","apiKey":"AIzaSyCnDjCaqGlK1Sd7Bg0SBwbpjWGE74s_L1g","authDomain":"aswan-doc.firebaseapp.com","messagingSenderId":"460513740798","measurementId":"G-05RLQDSKLZ","projectNumber":"460513740798","version":"2"}
+[debug] [2025-12-16T11:41:29.934Z] Checked if tokens are valid: true, expires at: 1765888886838
+[debug] [2025-12-16T11:41:29.934Z] Checked if tokens are valid: true, expires at: 1765888886838
+[debug] [2025-12-16T11:41:29.936Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc [none]
+[debug] [2025-12-16T11:41:30.286Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc 200
+[debug] [2025-12-16T11:41:30.286Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc {"projectId":"aswan-doc","projectNumber":"460513740798","displayName":"Aswan-Doc","name":"projects/aswan-doc","resources":{"hostingSite":"aswan-doc"},"state":"ACTIVE","etag":"1_2e628902-f451-4aea-9458-9b407f05c670"}
+[info] i  hosting[aswan-doc]: Serving hosting files from: out {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mout\u001b[22m"}}
+[info] +  hosting[aswan-doc]: Local server: http://127.0.0.1:5032 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5032\u001b[22m\u001b[24m"}}
+[debug] [2025-12-16T11:41:30.331Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5032 │ n/a                             │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-12-16T15:37:08.803Z] Received signal SIGHUP 1
+[info]  
+[info] i  emulators: Received SIGHUP for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGHUP signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  hosting: Stopping Hosting Emulator {"metadata":{"emulator":{"name":"hosting"},"message":"Stopping Hosting Emulator"}}
+[info] i  firestore: Stopping Firestore Emulator {"metadata":{"emulator":{"name":"firestore"},"message":"Stopping Firestore Emulator"}}
+[warn] !  Firestore Emulator has exited upon receiving signal: SIGINT 
+[info] i  auth: Stopping Authentication Emulator {"metadata":{"emulator":{"name":"auth"},"message":"Stopping Authentication Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[debug] [2025-12-16T15:37:09.021Z] Emulator locator file path: C:\Users\MOHAME~1\AppData\Local\Temp\hub-aswan-doc.json
+[debug] [2025-12-17T10:11:38.549Z] ----------------------------------------------------------------------
+[debug] [2025-12-17T10:11:38.565Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Mohamed Megahed\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2025-12-17T10:11:38.567Z] CLI Version:   14.25.0
+[debug] [2025-12-17T10:11:38.568Z] Platform:      win32
+[debug] [2025-12-17T10:11:38.568Z] Node Version:  v22.17.0
+[debug] [2025-12-17T10:11:38.568Z] Time:          Wed Dec 17 2025 12:11:38 GMT+0200 (Eastern European Standard Time)
+[debug] [2025-12-17T10:11:38.569Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-12-17T10:11:39.429Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-17T10:11:39.430Z] > authorizing via signed-in user (m.megahed168@gmail.com)
+[debug] [2025-12-17T10:11:39.886Z] java version "25.0.1" 2025-10-21 LTS
+
+[debug] [2025-12-17T10:11:39.888Z] Java(TM) SE Runtime Environment (build 25.0.1+8-LTS-27)
+Java HotSpot(TM) 64-Bit Server VM (build 25.0.1+8-LTS-27, mixed mode, sharing)
+
+[debug] [2025-12-17T10:11:39.919Z] Parsed Java major version: 25
+[info] i  emulators: Starting emulators: auth, firestore, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore, hosting"}}
+[debug] [2025-12-17T10:11:39.984Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-17T10:11:39.985Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-17T10:11:39.985Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-17T10:11:39.985Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-17T10:11:39.985Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-17T10:11:39.985Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5032}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-12-17T10:11:39.992Z] Emulator locator file path: C:\Users\MOHAME~1\AppData\Local\Temp\hub-aswan-doc.json
+[debug] [2025-12-17T10:11:39.993Z] [hub] writing locator at C:\Users\MOHAME~1\AppData\Local\Temp\hub-aswan-doc.json
+[debug] [2025-12-17T10:11:40.033Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-12-17T10:11:40.033Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2025-12-17T10:11:40.034Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\Mohamed Megahed\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.19.8.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","aswan-doc","--rules","C:\\Users\\Mohamed Megahed\\Desktop\\aswan-doc\\firestore.rules","--single_project_mode",true],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false,"shell":false,"port":8080} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\Mohamed Megahed\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.19.8.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"aswan-doc\",\"--rules\",\"C:\\\\Users\\\\Mohamed Megahed\\\\Desktop\\\\aswan-doc\\\\firestore.rules\",\"--single_project_mode\",true],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":8080}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[info] +  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2025-12-17T10:12:08.541Z] Checked if tokens are valid: false, expires at: 1765888886838
+[debug] [2025-12-17T10:12:08.542Z] Checked if tokens are valid: false, expires at: 1765888886838
+[debug] [2025-12-17T10:12:08.542Z] > refreshing access token with scopes: []
+[debug] [2025-12-17T10:12:08.547Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-17T10:12:08.547Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-17T10:12:08.946Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-17T10:12:08.946Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-17T10:12:08.968Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/aswan-doc/sites 
+[debug] [2025-12-17T10:12:10.068Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/aswan-doc/sites 200
+[debug] [2025-12-17T10:12:10.068Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/aswan-doc/sites {"sites":[{"name":"projects/aswan-doc/sites/aswan-doc","defaultUrl":"https://aswan-doc.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2025-12-17T10:12:10.069Z] Checked if tokens are valid: true, expires at: 1765969927946
+[debug] [2025-12-17T10:12:10.069Z] Checked if tokens are valid: true, expires at: 1765969927946
+[debug] [2025-12-17T10:12:10.069Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc/webApps/-/config [none]
+[debug] [2025-12-17T10:12:11.026Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc/webApps/-/config 200
+[debug] [2025-12-17T10:12:11.027Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc/webApps/-/config {"projectId":"aswan-doc","appId":"1:460513740798:web:8e6333a68e2639b518e2af","storageBucket":"aswan-doc.firebasestorage.app","apiKey":"AIzaSyCnDjCaqGlK1Sd7Bg0SBwbpjWGE74s_L1g","authDomain":"aswan-doc.firebaseapp.com","messagingSenderId":"460513740798","measurementId":"G-05RLQDSKLZ","projectNumber":"460513740798","version":"2"}
+[debug] [2025-12-17T10:12:11.040Z] Checked if tokens are valid: true, expires at: 1765969927946
+[debug] [2025-12-17T10:12:11.041Z] Checked if tokens are valid: true, expires at: 1765969927946
+[debug] [2025-12-17T10:12:11.041Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc [none]
+[debug] [2025-12-17T10:12:11.367Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc 200
+[debug] [2025-12-17T10:12:11.368Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/aswan-doc {"projectId":"aswan-doc","projectNumber":"460513740798","displayName":"Aswan-Doc","name":"projects/aswan-doc","resources":{"hostingSite":"aswan-doc"},"state":"ACTIVE","etag":"1_2e628902-f451-4aea-9458-9b407f05c670"}
+[info] i  hosting[aswan-doc]: Serving hosting files from: out {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mout\u001b[22m"}}
+[info] +  hosting[aswan-doc]: Local server: http://127.0.0.1:5032 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5032\u001b[22m\u001b[24m"}}
+[debug] [2025-12-17T10:12:11.451Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5032 │ n/a                             │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

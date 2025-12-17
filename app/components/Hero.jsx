@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 export default function Hero() {
   const router = useRouter();
-  const shouldReduce = useReducedMotion();
+  const reduce = useReducedMotion();
   return (
     <motion.section
       id="home"
@@ -21,35 +21,39 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h1 className="text-5xl md:text-7xl font-extrabold text-[var(--color-foreground)] leading-tight tracking-tight">
-            Welcome to{" "}
-            <span className="text-[var(--color-primary)]">Aswan-Doc</span>
+            Welcome to
+            <span className="text-[var(--color-primary)] block">Aswan-Med</span>
           </h1>
           <p className="mt-4 text-lg md:text-xl text-gray-600 max-w-xl">
             Find doctors and pharmacies in Aswan easily with a simple click —
             fast, accurate, and free.
           </p>
 
-          <div className="mt-8 flex items-center gap-4">
+          <div className="mt-8 flex flex-col items-start  gap-4">
             <motion.button
               onClick={() => router.push("/signup")}
-              whileHover={shouldReduce ? {} : { scale: 1.03 }}
-              whileTap={shouldReduce ? {} : { scale: 0.98 }}
+              whileHover={reduce ? {} : { scale: 1.03 }}
+              whileTap={reduce ? {} : { scale: 0.98 }}
               style={{
                 background:
                   "linear-gradient(90deg,var(--color-primary), var(--primary-dark))",
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white shadow-lg"
+              className=" inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white shadow-lg cursor-pointer"
             >
               Get Started
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M4 12h16M14 6l6 6-6 6"
+                  stroke="white"
+                  strokeWidth="2"
+                  fill="none"
+                />
+              </svg>
             </motion.button>
-            <motion.button
-              onClick={() => router.push("/signin")}
-              whileHover={shouldReduce ? {} : { scale: 1.02 }}
-              whileTap={shouldReduce ? {} : { scale: 0.98 }}
-              className="px-4 py-2 rounded-lg border font-semibold"
-            >
-              Sign In
-            </motion.button>
+            <h2 className="px-3 text-sm text-gray-600">
+              {" "}
+              No credit card is required{" "}
+            </h2>
           </div>
 
           <div className="mt-8 flex gap-6 text-sm text-gray-600">
@@ -77,7 +81,7 @@ export default function Hero() {
                   strokeWidth="1.5"
                 />
               </svg>
-              <span>Verified listings</span>
+              <span>100% Free</span>
             </div>
           </div>
         </motion.div>
@@ -86,23 +90,22 @@ export default function Hero() {
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="order-first md:order-last flex justify-center"
+          className="md:order-last flex justify-center"
         >
           <motion.div
-            whileHover={shouldReduce ? {} : { scale: 1.02 }}
-            whileTap={shouldReduce ? {} : { scale: 0.99 }}
+            whileHover={reduce ? {} : { scale: 1.02 }}
+            whileTap={reduce ? {} : { scale: 0.99 }}
             initial={{ scale: 0.98 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative w-full max-w-md rounded-xl overflow-hidden shadow-xl"
+            className="relative w-full max-w-md rounded-xl overflow-hidden shadow-xl h-56 md:h-72"
           >
             <Image
-              src="/home.jpg"
-              alt="home"
-              width={640}
-              height={640}
+              src="/hero.png"
+              alt="Illustration showing doctor search in Aswan"
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
               className="object-cover"
-              priority
             />
           </motion.div>
         </motion.div>
