@@ -5,6 +5,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
+import Faq from "./components/faq";
 
 export default function HomePage() {
   return (
@@ -19,9 +20,9 @@ export default function HomePage() {
           </h2>
         </div>
         <Services />
-        <div className="max-w-7xl mx-auto px-6 my-10">
+        <div className="max-w-7xl  px-6 mt-10">
           <h2 className="text-4xl md:text-5xl font-thin text-center tracking-tight">
-            Who Am I?
+            About Aswan-Med
           </h2>
         </div>
         <About />

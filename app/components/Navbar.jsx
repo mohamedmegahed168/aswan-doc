@@ -45,6 +45,12 @@ export default function Navbar() {
           >
             <Link href="#contact">Contact</Link>
           </motion.div>
+          <motion.div
+            whileHover={reduce ? {} : { y: -2 }}
+            className="hover:text-[var(--color-primary)]"
+          >
+            <Link href="#faq"> FAQ </Link>
+          </motion.div>
         </div>
 
         <div className="hidden md:flex items-center gap-4">

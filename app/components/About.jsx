@@ -1,142 +1,153 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 
-function About() {
+export default function About() {
   const reduce = useReducedMotion();
 
   const container = {
-    hidden: { opacity: 0, y: 100 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { staggerChildren: 0.06, duration: 0.45 },
-    },
+    hidden: { opacity: 0, y: 14 },
+    show: { opacity: 1, y: 0, transition: { staggerChildren: 0.06 } },
   };
   const item = {
     hidden: { opacity: 0, y: 8 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.36 } },
   };
 
   return (
     <motion.section
       id="about"
-      aria-label="About Aswan-Doc"
-      className="max-w-7xl mx-auto my-20 px-6 sm:px-8"
+      aria-labelledby="about-title"
+      className="max-w-7xl mx-auto px-6 py-10"
       initial={reduce ? undefined : "hidden"}
-      animate={reduce ? undefined : "show"}
+      whileInView={reduce ? undefined : "show"}
+      viewport={{ once: true, amount: 0.18 }}
       variants={container}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <motion.div variants={item} className="space-y-6">
-          <p className="text-sm font-medium text-[var(--color-primary)]">
-            About Aswan-Doc
-          </p>
-
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Find trusted doctors and pharmacies in Aswan — quickly and
-            confidently.
+      <div>
+        <div className="flex flex-col gap-5">
+          <h2
+            id="about-title"
+            className="text-2xl md:text-3xl font-semibold text-center"
+          >
+            Why I built this — to make finding healthcare in Aswan simple and
+            reliable.
           </h2>
-
-          <p className="text-gray-600 max-w-xl">
-            As a developer born and raised in Aswan, I built Aswan‑Doc to make
-            it effortless for residents and visitors to search, compare, and
-            contact local healthcare providers and pharmacies. Local-first,
-            accurate, and easy to use.
+          <p className="text-gray-600 text-center ">
+            I grew up in Aswan and saw how difficult it was to locate
+            up-to-date, trustworthy medical information. I built this site to
+            make it easier for residents and visitors to find doctors, clinics
+            and pharmacies — quickly and confidently.
           </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="flex items-start gap-3">
-              <svg
-                className="w-6 h-6 text-[var(--color-primary)] flex-shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden
-              >
-                <path
-                  d="M5 12h14"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12 5v14"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <div>
-                <p className="font-medium">Local directory</p>
-                <p className="text-sm text-gray-500">
-                  Accurate listings of doctors and clinics in Aswan.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <svg
-                className="w-6 h-6 text-[var(--color-primary)] flex-shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden
-              >
-                <path
-                  d="M20 6L9 17l-5-5"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <div>
-                <p className="font-medium">Verified info</p>
-                <p className="text-sm text-gray-500">
-                  Contacts, hours and locations are checked for accuracy.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex gap-3 mt-4">
-            <Link
-              href="/signup"
-              aria-label="Sign up"
-              className="inline-flex items-center gap-2 px-5 py-3 bg-[var(--color-primary)] text-white rounded-lg shadow hover:scale-102 transition-transform"
-            >
-              Get Started
-            </Link>
-
-            <Link
-              href="#contact"
-              aria-label="Contact us"
-              className="inline-flex items-center gap-2 px-4 py-3 border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-50 transition"
-            >
-              Contact
-            </Link>
-          </div>
-        </motion.div>
-
-        {/* Image (kept second in DOM) */}
+        </div>
         <motion.div
           variants={item}
-          className="relative w-full rounded-xl overflow-hidden shadow-xl h-56 md:h-72"
-          whileHover={reduce ? {} : { scale: 1.02 }}
-          whileTap={reduce ? {} : { scale: 0.98 }}
+          className="space-y-5 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
         >
-          <Image
-            src="/aswan1.jpg"
-            alt="Nile view of Aswan city with palm trees"
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, 50vw"
-            priority={false}
-          />
+          <div className="block md:hidden relative h-44 rounded-lg overflow-hidden my-3">
+            <Image
+              src="/aswan1.jpg"
+              alt="Aswan skyline along the Nile"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+          <motion.div
+            variants={item}
+            className="hidden md:flex items-center justify-center"
+          >
+            <div className="relative w-full max-w-md rounded-xl overflow-hidden shadow-lg h-72 ">
+              <Image
+                src="/aswan1.jpg"
+                alt="Aswan skyline along the Nile"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Feature
+              title="Local coverage"
+              desc="Curated listings for doctors, clinics and pharmacies across Aswan."
+              icon={
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z"
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                  />
+                  <circle cx="12" cy="9" r="2.2" fill="currentColor" />
+                </svg>
+              }
+            />
+
+            <Feature
+              title="Verified information"
+              desc="Contact details and hours are checked and updated when possible."
+              icon={
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                </svg>
+              }
+            />
+
+            <Feature
+              title="Clear directions"
+              desc="Map links and addresses to help you get there, fast."
+              icon={
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M9 10l2 2 4-4"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              }
+            />
+          </div>
+
+          <p className="text-sm text-gray-500 mt-3">
+            Local-first and privacy-respecting — built to be useful and
+            unobtrusive.
+          </p>
         </motion.div>
       </div>
     </motion.section>
   );
 }
-export default About;
+
+function Feature({ icon, title, desc }) {
+  return (
+    <div className="flex items-start gap-3">
+      <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-[#eef8fb] to-[#f4fbff] text-[var(--color-primary)]">
+        {icon}
+      </span>
+      <div>
+        <p className="font-medium text-sm">{title}</p>
+        <p className="text-sm text-gray-500">{desc}</p>
+      </div>
+    </div>
+  );
+}

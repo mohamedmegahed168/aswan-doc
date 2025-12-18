@@ -42,13 +42,7 @@ export default function Services() {
       },
     },
   };
-  const imageReveal = {
-    hidden: { clipPath: "inset(0 0 100% 0)" },
-    visible: {
-      clipPath: "inset(0 0 0% 0)",
-      transition: { duration: 0.3, ease: "easeOut" },
-    },
-  };
+
   return (
     <section id="services" className="bg-[#f6f9fb] py-20 mx-14 rounded-xl">
       <motion.div
