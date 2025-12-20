@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { db, auth } from "@/storage/firebase";
+import Navbar from "../components/Navbar";
+import { auth } from "@/storage/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -22,27 +22,25 @@ function SignIn() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <Navbar />
       <div className="max-w-md bg-white w-full rounded-lg shadow-xl  p-8">
         <h1 className="text-3xl font-bold mb-4"> Sign In Page </h1>
-        <form className="space-y-6" onSubmit={handleSignIn}>
+        <form className="space-y-6 text-gray-700" onSubmit={handleSignIn}>
           <div>
-            <label
-              htmlFor="email"
-              className="block text-md font-medium text-gray-700 mb-2"
-            >
+            <label htmlFor="email" className="block text-md font-normal mb-2">
               Email:
             </label>
             <input
               name="email"
               type="email"
               id="email"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              className="font-normal w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-[var(--color-primary)]"
             />
           </div>
           <div>
             <label
               htmlFor="password"
-              className="block text-md font-medium text-gray-700 mb-2"
+              className="block text-md font-normal mb-2"
             >
               Password:
             </label>
@@ -50,7 +48,7 @@ function SignIn() {
               name="password"
               type="password"
               id="password"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 transition"
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-[var(--color-primary)]"
             />
           </div>
           <motion.button

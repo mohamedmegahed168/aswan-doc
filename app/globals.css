@@ -30,6 +30,13 @@ html {
   }
 }
 
+html,
+body {
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 body {
   font-family: var(--font-sans);
   line-height: 1.6;
@@ -37,16 +44,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure content and media never exceed viewport width */
+main,
+#__next {
+  min-width: 0;
+}
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 h1,
 h2,
 h3 {
   font-family: var(--font-heading);
   letter-spacing: -0.01em;
-}
-
-:focus-visible {
-  outline: 3px solid rgba(45, 160, 210, 0.25);
-  outline-offset: 2px;
 }
 
 button,

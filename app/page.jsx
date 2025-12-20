@@ -1,5 +1,5 @@
 "use client";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/HeroNavBar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
