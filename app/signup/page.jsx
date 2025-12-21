@@ -10,6 +10,7 @@ function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -26,45 +27,58 @@ function SignUp() {
       password: "",
       general: "",
     };
-    if (!name) {
-      ((newErrors.name = "name is required"), (isValid = false));
+
+    if (!name || !name.trim()) {
+      newErrors.name = "Name is required";
+      isValid = false;
     } else if (name.trim().length < 3) {
-      newErrors.name = "name must be at least 3 characters";
+      newErrors.name = "Name must be at least 3 characters";
       isValid = false;
     }
-    if (!email) {
-      ((newErrors.email = "email is required"), (isValid = false));
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      ((newErrors.email = "please enter a valide email"), (isValid = false));
+
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(trimmedEmail)) {
+      newErrors.email = "Please enter a valid email";
+      isValid = false;
     }
+
     if (!password) {
-      ((newErrors.password = "password is required"), (isValid = false));
+      newErrors.password = "Password is required";
+      isValid = false;
     } else if (password.trim().length < 6) {
-      ((newErrors.password = "password must be at least 6 characters"),
-        (isValid = false));
+      newErrors.password = "Password must be at least 6 characters";
+      isValid = false;
     }
+
     setErrors(newErrors);
     return isValid;
   }
   async function handleSignUp(event) {
     event.preventDefault();
     if (!validateForm()) return;
+    setIsSubmitting(true);
     setErrors({ name: "", email: "", password: "", general: "" });
     try {
+      const trimmedEmail = email.trim();
       const userCredentials = await createUserWithEmailAndPassword(
         auth,
-        email,
+        trimmedEmail,
         password
       );
       const user = userCredentials.user;
       await setDoc(doc(usersCollection, user.uid), {
         name: name.trim(),
-        email: email.trim(),
+        email: trimmedEmail,
         createdAt: serverTimestamp(),
       });
       router.push("/dashboard");
     } catch (error) {
-      handleFirebaseErrors(error.code);
+      handleFirebaseErrors(error?.code || error?.message || "unknown");
+    } finally {
+      setIsSubmitting(false);
     }
   }
   function handleFirebaseErrors(errorCode) {
@@ -72,7 +86,7 @@ function SignUp() {
       case "auth/email-already-in-use":
         setErrors((prev) => ({
           ...prev,
-          email: "This Email is already registered",
+          email: "This email is already registered",
         }));
         break;
       case "auth/network-request-failed":
@@ -85,6 +99,12 @@ function SignUp() {
         setErrors((prev) => ({
           ...prev,
           password: "Too many attempts. Try again later.",
+        }));
+        break;
+      case "auth/weak-password":
+        setErrors((prev) => ({
+          ...prev,
+          password: "Password is too weak. Use at least 6 characters.",
         }));
         break;
       default:
@@ -101,10 +121,19 @@ function SignUp() {
       <Navbar />
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="w-full max-w-md">
-          <div className="bg-white shadow-xl rounded-xl p-8 min-h-96 space-y-4">
-            <h1 className="text-3xl font-bold"> Sign Up Page </h1>
+          <motion.div
+            initial={reduce ? {} : { opacity: 0, y: 8 }}
+            animate={reduce ? {} : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.48, ease: [0.2, 0.9, 0.2, 1] }}
+            className="bg-white shadow-xl rounded-xl p-8 min-h-96 space-y-4"
+          >
+            <h1 className="text-3xl font-bold animate-fade-in">Sign Up</h1>
             {errors.general && (
-              <p className="text-sm font-normal text-red-500">
+              <p
+                role="alert"
+                aria-live="assertive"
+                className="text-sm font-normal text-red-500"
+              >
                 {errors.general}
               </p>
             )}
@@ -114,11 +143,14 @@ function SignUp() {
                   Name:
                 </label>
                 <input
+                  autoFocus
+                  value={name}
                   required
                   onChange={(e) => setName(e.target.value)}
                   type="text"
                   placeholder="full name"
                   id="name"
+                  aria-invalid={!!errors.name}
                   className="w-full font-normal  px-4 py-3 border border-gray-300 focus:outline-[var(--color-primary)] rounded-xl"
                 />
                 {errors.name && (
@@ -132,11 +164,14 @@ function SignUp() {
                   Email:
                 </label>
                 <input
+                  value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   name="email"
                   type="email"
+                  required
                   placeholder="email"
                   id="email"
+                  aria-invalid={!!errors.email}
                   className="w-full font-normal  px-4 py-3 border border-gray-300 rounded-xl focus:outline-[var(--color-primary)]"
                 />
                 {errors.email && (
@@ -152,31 +187,42 @@ function SignUp() {
                 >
                   Password:
                 </label>
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  name="password"
-                  type="password"
-                  placeholder="password"
-                  id="password"
-                  className="w-full font-normal px-4 py-3 border border-gray-300 rounded-xl focus:outline-[var(--color-primary)]"
-                />
+                <div className="relative">
+                  <input
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    id="password"
+                    aria-invalid={!!errors.password}
+                    className="w-full font-normal px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:outline-[var(--color-primary)]"
+                  />
+                </div>
                 {errors.password && (
-                  <p className="text-sm font-normal font-red-500 pl-2">
-                    {errors.password}
-                  </p>
+                  <p className="text-sm text-red-500 pl-2">{errors.password}</p>
                 )}
               </div>
               <motion.button
                 type="submit"
                 whileHover={reduce ? {} : { scale: 1.02 }}
                 whileTap={reduce ? {} : { scale: 0.98 }}
-                className="w-full bg-[var(--color-primary)] text-white text-lg py-3 rounded-xl font-semibold hover:bg-[var(--primary-dark)] active:scale-95 transition-all cursor-pointer"
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
+                className={`w-full text-white text-lg py-3 rounded-xl cursor-pointer font-semibold transition-all ${isSubmitting ? "bg-slate-400 cursor-not-allowed" : "bg-[var(--color-primary)] hover:bg-[var(--primary-dark)]"}`}
               >
-                Sign Up
+                {isSubmitting ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
+                    <span>Signing up...</span>
+                  </div>
+                ) : (
+                  "Sign Up"
+                )}
               </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

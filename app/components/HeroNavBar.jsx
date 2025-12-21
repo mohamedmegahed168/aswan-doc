@@ -31,6 +31,12 @@ export default function HeroNavbar() {
             whileHover={reduce ? {} : { y: -2 }}
             className="hover:text-[var(--color-primary)]"
           >
+            <Link href="/dashboard"> Dashboard </Link>
+          </motion.div>
+          <motion.div
+            whileHover={reduce ? {} : { y: -2 }}
+            className="hover:text-[var(--color-primary)]"
+          >
             <Link href="#services">Services</Link>
           </motion.div>
           <motion.div

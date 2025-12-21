@@ -1,5 +1,7 @@
 "use client";
 import { signOut, onAuthStateChanged } from "firebase/auth";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { auth, db } from "@/storage/firebase";
 import {
   collection,
@@ -13,21 +15,29 @@ import {
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-function DoctorCard({ doctor }) {
+function DoctorCard({ doctor, index = 0 }) {
   return (
-    <div className="bg-white rounded-lg shadow p-4 flex flex-col gap-3 hover:shadow-lg transition">
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-semibold">
+    <div
+      style={{ animationDelay: `${index * 70}ms` }}
+      className="opacity-0 animate-fade-up bg-white rounded-xl shadow-md p-5 flex flex-col gap-4 transform transition duration-300 hover:scale-105 hover:shadow-xl"
+    >
+      <div className="flex items-center gap-4">
+        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-pink-500 text-white flex items-center justify-center font-semibold text-lg">
           {doctor.name ? doctor.name.charAt(0).toUpperCase() : "D"}
         </div>
         <div>
-          <h3 className="font-medium text-lg">{doctor.name}</h3>
+          <h3 className="font-semibold text-lg">{doctor.name}</h3>
           <p className="text-sm text-slate-500">{doctor.speciality}</p>
         </div>
+        <div className="ml-auto text-sm text-slate-400">
+          {doctor.city || "—"}
+        </div>
       </div>
+
       <div className="text-sm text-slate-600">City: {doctor.city || "—"}</div>
+
       {doctor.phone && (
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <a
             href={`tel:${doctor.phone}`}
             className="text-sm text-indigo-600 hover:underline"
@@ -42,11 +52,12 @@ function DoctorCard({ doctor }) {
           </a>
         </div>
       )}
+
       <div className="mt-auto flex gap-2">
-        <button className="px-3 py-1 bg-indigo-600 text-white rounded">
+        <button className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-md shadow-sm hover:shadow-lg transition">
           Book
         </button>
-        <button className="px-3 py-1 border rounded">View</button>
+        <button className="px-4 py-2 border rounded-md">View</button>
       </div>
     </div>
   );
@@ -131,17 +142,27 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-slate-50 p-6">
       <header className="max-w-6xl mx-auto flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">Dashboard</h1>
-          <p className="text-sm text-slate-600">
+          <h1 className="text-2xl font-bold animate-fade-in">Dashboard</h1>
+          <p className="text-sm text-slate-600 animate-fade-in">
             Find available doctors in your area
           </p>
         </div>
-        <div className="flex items-center gap-4">
-          <div className="text-right">
-            <div className="text-sm text-slate-700">
-              {userInfo?.name || "User"}
+        <motion.div whileTap={{ scale: 0.98 }}>
+          <Link href="/" className="text-2xl font-semibold">
+            Aswan-Med
+          </Link>
+        </motion.div>
+        <div className="flex items-center gap-4 animate-fade-in">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center font-semibold">
+              {userInfo?.name ? userInfo.name.charAt(0).toUpperCase() : "U"}
             </div>
-            <div className="text-xs text-slate-500">{user?.email}</div>
+            <div className="text-right">
+              <div className="text-sm text-slate-700">
+                {userInfo?.name || "User"}
+              </div>
+              <div className="text-xs text-slate-500">{user?.email}</div>
+            </div>
           </div>
           <button
             onClick={handleSignOut}
@@ -154,8 +175,10 @@ export default function DashboardPage() {
 
       <section className="max-w-6xl mx-auto bg-white rounded-lg p-4 shadow mb-6">
         <div className="flex flex-col md:flex-row items-center gap-3">
-          <select
-            className="border border-gray-400 p-2 rounded w-full md:w-64 outline-none font-normal"
+          <motion.select
+            whileHover={{ scale: 1.02 }}
+            whileFocus={{ borderColor: "#4346f1ff" }}
+            className=" rounded-xl p-2 border border-gray-400 cursor-pointer w-full md:w-64 outline-none font-normal"
             onChange={(e) => setCity(e.target.value)}
             value={city}
           >
@@ -163,10 +186,12 @@ export default function DashboardPage() {
             <option value="Komombo">Komombo</option>
             <option value="Aswan">Aswan</option>
             <option value="Daraw">Daraw</option>
-          </select>
+          </motion.select>
 
-          <select
-            className="border p-2 rounded w-full md:w-64"
+          <motion.select
+            whileHover={{ scale: 1.02 }}
+            whileFocus={{ borderColor: "#4346f1ff " }}
+            className="border border-gray-400 cursor-pointer outline-none font-normal p-2 rounded-xl w-full md:w-64"
             onChange={(e) => setSpeciality(e.target.value)}
             value={speciality}
           >
@@ -175,20 +200,27 @@ export default function DashboardPage() {
             <option value="Dermatologist">Dermatologist</option>
             <option value="Pediatrician">Pediatrician</option>
             <option value="Internal Medicine">Internal Medicine</option>
-          </select>
+          </motion.select>
 
           <div className="ml-auto flex gap-2">
-            <button onClick={resetFilters} className="px-3 py-1 border rounded">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={resetFilters}
+              className="px-5 py-1 bg-transparent border border-gray-300 text-gray-500 rounded-xl cursor-pointer hover:border-gray-400 transition-colors hover:text-gray-700"
+            >
               Reset
-            </button>
+            </motion.button>
           </div>
         </div>
       </section>
 
       <main className="max-w-6xl mx-auto">
         {loading ? (
-          <div className="flex items-center justify-center py-20">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="skeleton rounded-xl p-4 h-36 shadow" />
+            ))}
           </div>
         ) : error ? (
           <div className="p-4 bg-rose-50 text-rose-700 rounded">{error}</div>
@@ -198,8 +230,8 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {doctors.map((doctor) => (
-              <DoctorCard key={doctor.id} doctor={doctor} />
+            {doctors.map((doctor, i) => (
+              <DoctorCard key={doctor.id} doctor={doctor} index={i} />
             ))}
           </div>
         )}
