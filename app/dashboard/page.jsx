@@ -93,38 +93,45 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 p-6">
-      <header className="max-w-6xl mx-auto flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold animate-fade-in">Dashboard</h1>
-          <p className="text-sm text-slate-600 animate-fade-in">
-            Find available doctors in your area
-          </p>
-        </div>
-        <motion.div whileTap={{ scale: 0.98 }}>
+      <header className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <motion.div
+          whileTap={{ scale: 0.98 }}
+          className="self-center md:self-auto"
+        >
           <Link href="/" className="text-2xl font-semibold">
             Aswan-Med
           </Link>
         </motion.div>
-        <div className="flex items-center gap-4 animate-fade-in">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center font-semibold">
+        <div className="flex items-center gap-4 animate-fade-in w-full md:w-auto justify-between md:justify-end">
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center font-semibold text-sm md:text-lg">
               {userInfo?.name ? userInfo.name.charAt(0).toUpperCase() : "U"}
             </div>
-            <div className="text-right">
-              <div className="text-sm text-slate-700">
+            <div>
+              <div className="text-xs md:text-sm text-slate-700 truncate">
                 {userInfo?.name || "User"}
               </div>
-              <div className="text-xs text-slate-500">{user?.email}</div>
+              <div className="text-[11px] md:text-xs text-slate-500 truncate">
+                {user?.email}
+              </div>
             </div>
           </div>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleSignOut}
-            className="px-3 py-2 rounded-xl bg-red-600 text-white text-md cursor-pointer hover:bg-red-700 transition-colors"
+            className="px-2 py-1 md:px-3 md:py-2 rounded-xl bg-red-600 text-white text-sm md:text-md cursor-pointer hover:bg-red-700 transition-colors"
           >
             Sign Out
           </motion.button>
+        </div>
+        <div>
+          <h1 className="text-xl md:text-2xl font-bold animate-fade-in">
+            Dashboard
+          </h1>
+          <p className="text-xs md:text-sm text-slate-600 animate-fade-in">
+            Find available doctors in your area
+          </p>
         </div>
       </header>
 
