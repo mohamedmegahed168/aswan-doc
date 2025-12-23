@@ -8,10 +8,10 @@ function Contact() {
     >
       <div className="md:flex md:items-start gap-6">
         <div className="md:w-1/2">
-          <h2 className="text-2xl font-bold mb-2">Contact Us</h2>
+          <h2 className="text-2xl font-bold mb-2">Contact Me</h2>
           <p className="text-slate-600 mb-4">
-            Have a question or need help finding a doctor? Send us a message and
-            we will get back to you as soon as possible.
+            Have a question or need help finding a doctor? Send me a message and
+            I will get back to you as soon as possible.
           </p>
 
           <div className="space-y-3 text-sm text-slate-700">

@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div>
           <div className="text-2xl md:text-3xl font-extrabold tracking-tight">
-            Aswan-Doc
+            Aswan-Med
           </div>
           <div className="text-sm text-gray-300 mt-1">
             Helping you find care in Aswan
@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-6 border-t border-white/10 pt-4 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Aswan-Doc. All rights reserved.
+        © {new Date().getFullYear()} Aswan-Med. All rights reserved.
       </div>
     </motion.footer>
   );

@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import { auth } from "@/storage/doctors";
+import { auth } from "@/storage/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -154,7 +154,7 @@ function SignIn() {
             whileTap={reduce ? {} : { scale: 0.98 }}
             disabled={isSubmitting}
             aria-busy={isSubmitting}
-            className="w-full text-white bg-[var(--color-primary)] px-2 py-3 rounded-xl text-lg font-semibold cursor-pointer"
+            className={`w-full text-white text-lg py-3 rounded-xl cursor-pointer font-semibold transition-all ${isSubmitting ? "bg-slate-400 cursor-not-allowed" : "bg-[var(--color-primary)] hover:bg-[var(--primary-dark)]"}`}
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center gap-2">

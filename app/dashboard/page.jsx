@@ -2,7 +2,7 @@
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { auth, db } from "@/storage/doctors";
+import { auth, db } from "@/storage/firebase";
 import {
   collection,
   query,
@@ -268,13 +268,20 @@ function DoctorCard({ doctor, index = 0 }) {
       </div>
 
       <div className="mt-auto flex flex-col gap-2">
-        {doctor.address && (
+        {doctor.address ? (
           <p className="text-sm text-gray-400">Address: {doctor.address}</p>
+        ) : (
+          <p className="text-md text-gray-400">
+            We are sorry but there is no available address for this doctor yet
+          </p>
         )}
         {doctor.pharmacy && (
           <p className="text-sm text-gray-400">
             Closest pharmacy: {doctor.pharmacy} Pharmacy
           </p>
+        )}
+        {doctor.arrivalTime && (
+          <p className="text-sm text-gray-400"> {doctor.arrivalTime} </p>
         )}
 
         <div className="mt-3 flex gap-3">

@@ -15,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Aswan-Doc",
+  title: "Aswan-Med",
   description: "Find doctors and pharmacies in Aswan quickly and easily",
 };
 

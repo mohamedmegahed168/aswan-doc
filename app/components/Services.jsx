@@ -153,6 +153,7 @@ export default function Services() {
               <div className="relative w-full h-36 md:h-44 rounded-xl overflow-hidden mb-4">
                 <Image
                   src={it.img}
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   alt={`${it.title} image`}
                   fill
                   className="object-cover"

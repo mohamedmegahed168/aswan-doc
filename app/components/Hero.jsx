@@ -67,7 +67,7 @@ export default function Hero() {
                   strokeWidth="2"
                 />
               </svg>
-              <span>+200 doctors</span>
+              <span>+250 doctors</span>
             </div>
             <div className="flex items-center gap-2">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">

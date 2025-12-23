@@ -109,7 +109,7 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="list">
               <Feature
                 title="Speed"
-                desc="Find and book appointments in a few clicks — no long waits."
+                desc="Find doctors in a few clicks — no long waits."
                 icon={
                   <svg
                     className="w-5 h-5"
