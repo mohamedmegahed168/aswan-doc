@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import { auth } from "@/storage/firebase";
+import { auth } from "@/storage/doctors";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { motion, useReducedMotion } from "framer-motion";
 

@@ -5,12 +5,26 @@ export default function About() {
   const reduce = useReducedMotion();
 
   const container = {
-    hidden: { opacity: 0, y: 14 },
-    show: { opacity: 1, y: 0, transition: { staggerChildren: 0.06 } },
+    hidden: { opacity: 0, y: 28 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, staggerChildren: 0.12, delayChildren: 0.06 },
+    },
   };
   const item = {
-    hidden: { opacity: 0, y: 8 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.36 } },
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        type: "spring",
+        stiffness: 300,
+        damping: 22,
+      },
+    },
   };
 
   return (
@@ -21,7 +35,7 @@ export default function About() {
       aria-labelledby="about-title"
       className="max-w-7xl mx-auto px-6 mb-5 py-12 bg-gradient-to-b from-white to-[#fbfdff] rounded-xl"
       initial={reduce ? undefined : "hidden"}
-      whileInView={reduce ? undefined : "show"}
+      whileInView={reduce ? undefined : "visible"}
       variants={container}
     >
       <div>

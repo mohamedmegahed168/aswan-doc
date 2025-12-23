@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { collection, setDoc, doc, serverTimestamp } from "firebase/firestore";
-import { db, auth } from "@/storage/firebase";
+import { db, auth } from "@/storage/doctors";
 import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { motion, useReducedMotion } from "framer-motion";

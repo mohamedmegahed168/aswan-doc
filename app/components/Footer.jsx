@@ -20,24 +20,10 @@ export default function Footer() {
         <div className="flex gap-6">
           <motion.a
             whileHover={{ scale: 1.03 }}
-            href="#"
+            href="#contact"
             className="text-gray-300 hover:text-white"
           >
             Contact
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.03 }}
-            href="#"
-            className="text-gray-300 hover:text-white"
-          >
-            Privacy
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.03 }}
-            href="#"
-            className="text-gray-300 hover:text-white"
-          >
-            Terms
           </motion.a>
         </div>
       </div>

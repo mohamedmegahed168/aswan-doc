@@ -1,9 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { connectFirestoreEmulator } from "firebase/firestore";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import fs from 'fs';
-const doctors = JSON.parse(fs.readFileSync(new URL('../Doctors.json', import.meta.url), 'utf8'));
 
+
+const doctors = JSON.parse(fs.readFileSync(new URL('../Doctors.json', import.meta.url), 'utf8'));
 const firebaseConfig = {
   apiKey: "AIzaSyCnDjCaqGlK1Sd7Bg0SBwbpjWGE74s_L1g", 
   authDomain: "aswan-doc.firebaseapp.com", 
@@ -14,9 +14,8 @@ const firebaseConfig = {
 };
 const app= initializeApp(firebaseConfig); 
 const db= getFirestore(app); 
-export const doctorsReference= collection(db, "doctors"); 
+const doctorsReference= collection(db, "doctors"); 
    
-connectFirestoreEmulator(db, "localhost", 8080);
 async function doctorsSetUp() {
     let added = 0;
     let errors = 0;

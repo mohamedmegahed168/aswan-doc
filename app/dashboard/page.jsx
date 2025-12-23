@@ -2,7 +2,7 @@
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { auth, db } from "@/storage/firebase";
+import { auth, db } from "@/storage/doctors";
 import {
   collection,
   query,
@@ -123,7 +123,7 @@ export default function DashboardPage() {
             onClick={handleSignOut}
             className="px-3 py-2 rounded-xl bg-red-600 text-white text-md cursor-pointer hover:bg-red-700 transition-colors"
           >
-            Sign out
+            Sign Out
           </motion.button>
         </div>
       </header>
@@ -214,6 +214,7 @@ export default function DashboardPage() {
     </div>
   );
 }
+
 function DoctorCard({ doctor, index = 0 }) {
   const specialtyPhotos = {
     Cardiology: "/cardiology.jpg",
@@ -229,11 +230,10 @@ function DoctorCard({ doctor, index = 0 }) {
     "General Medicine": "/Gp.png",
     "Internal Medicine": "/Internal.png",
   };
-  const photos =
-    doctor.photoURL ||
-    doctor.photo ||
-    specialtyPhotos[doctor.specialty] ||
-    "/default.jpg";
+  const photos = specialtyPhotos[doctor?.specialty] || "/default.jpg";
+  const phone = doctor?.contact || "";
+  const mapsUrl = doctor?.location || "";
+
   return (
     <div
       style={{ animationDelay: `${index * 70}ms` }}
@@ -248,17 +248,16 @@ function DoctorCard({ doctor, index = 0 }) {
           <p className="text-sm text-slate-500">{doctor.specialty}</p>
         </div>
         <div className="ml-auto text-sm text-slate-400">
-          {doctor.area || "—"}
+          {doctor.area || ""}
         </div>
       </div>
 
-      {/* primary image: responsive aspect ratio, overlay, and subtle zoom on hover */}
       <div className="w-full relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/9] min-h-[120px] md:min-h-[140px]">
         <Image
           src={photos}
           fill
           sizes="(max-width: 640px) 100vw, 50vw"
-          alt="Specialty photo"
+          alt={`${doctor.specialty} photo`}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
@@ -267,32 +266,37 @@ function DoctorCard({ doctor, index = 0 }) {
           <div className="text-xs opacity-90">{doctor.specialty}</div>
         </div>
       </div>
+
       <div className="mt-auto flex flex-col gap-2">
         {doctor.address && (
-          <p className="text-sm text-gray-400"> Address: {doctor.address} </p>
+          <p className="text-sm text-gray-400">Address: {doctor.address}</p>
         )}
         {doctor.pharmacy && (
           <p className="text-sm text-gray-400">
-            {" "}
-            Closest pharmacy: {doctor.pharmacy}{" "}
+            Closest pharmacy: {doctor.pharmacy} Pharmacy
           </p>
         )}
-        {doctor.contact && (
-          <Link
-            href={`tel:${doctor.phone}`}
-            className="px-4 py-2  bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-md shadow-sm hover:shadow-lg transition"
-          >
-            Call
-          </Link>
-        )}
-        {doctor.location && (
-          <Link
-            href="https://www.google.com/maps"
-            className="px-4 py-2 border rounded-md"
-          >
-            View on maps
-          </Link>
-        )}
+
+        <div className="mt-3 flex gap-3">
+          {phone && (
+            <Link
+              href={`tel:${phone}`}
+              className="px-5 py-2 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700"
+            >
+              Call
+            </Link>
+          )}
+          {mapsUrl && (
+            <Link
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 border rounded-xl text-slate-700 hover:bg-slate-50 transition"
+            >
+              View on maps
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

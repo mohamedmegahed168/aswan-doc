@@ -6,6 +6,7 @@ import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import Faq from "./components/Faq";
+import Contact from "./components/Contact";
 export default function HomePage() {
   return (
     <div className="flex flex-col">
@@ -15,7 +16,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 my-12">
           <h2 className="text-4xl md:text-5xl font-thin text-center tracking-tight">
             Discover From More Than
-            <span className="text-[var(--color-primary)]">+200</span> Doctors
+            <span className="text-[var(--color-primary)]">+250</span> Doctors
           </h2>
         </div>
         <Services />
@@ -31,6 +32,7 @@ export default function HomePage() {
           </h2>
         </div>
         <Faq />
+        <Contact />
         <Testimonials />
       </main>
       <Footer />
