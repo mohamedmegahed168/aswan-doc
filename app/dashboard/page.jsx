@@ -117,12 +117,14 @@ export default function DashboardPage() {
               <div className="text-xs text-slate-500">{user?.email}</div>
             </div>
           </div>
-          <button
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             onClick={handleSignOut}
-            className="px-3 py-1 rounded bg-red-500 text-white text-sm"
+            className="px-3 py-2 rounded-xl bg-red-600 text-white text-md cursor-pointer hover:bg-red-700 transition-colors"
           >
             Sign out
-          </button>
+          </motion.button>
         </div>
       </header>
 
@@ -154,6 +156,13 @@ export default function DashboardPage() {
             <option value="Pediatrics">Pediatrics</option>
             <option value="Internal Medicine">Internal Medicine</option>
             <option value="Gynecology"> Gynecology</option>
+            <option value="Orhtopedics"> Orthopedics</option>
+            <option value="Surgery"> Surgery </option>
+            <option value="Urology"> Urology </option>
+            <option value="Pulmonology"> Pulmonology </option>
+            <option value="ENT"> ENT </option>
+            <option value="Neurology"> Neurology</option>
+            <option value="General Medicine"> General Medicine </option>
           </motion.select>
 
           <div className="ml-auto flex gap-2">
@@ -208,7 +217,17 @@ export default function DashboardPage() {
 function DoctorCard({ doctor, index = 0 }) {
   const specialtyPhotos = {
     Cardiology: "/cardiology.jpg",
-    Dermatology: "/dermatology.jpg",
+    Dermatology: "/Derma.png",
+    Gynecology: "/Gyna.png",
+    Orthopedics: "/Ortho.png",
+    Pediatrics: "/Pedia.png",
+    Surgery: "/Surgery.png",
+    Urology: "/Uro.png",
+    Pulmonology: "/Chest.png",
+    ENT: "/ENT.png",
+    Neurology: "/Neuro.png",
+    "General Medicine": "/Gp.png",
+    "Internal Medicine": "/Internal.png",
   };
   const photos =
     doctor.photoURL ||
@@ -239,7 +258,7 @@ function DoctorCard({ doctor, index = 0 }) {
           src={photos}
           fill
           sizes="(max-width: 640px) 100vw, 50vw"
-          alt={doctor.name ? `Photo of Dr. ${doctor.name}` : doctor.id}
+          alt="Specialty photo"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
@@ -248,13 +267,20 @@ function DoctorCard({ doctor, index = 0 }) {
           <div className="text-xs opacity-90">{doctor.specialty}</div>
         </div>
       </div>
-      <div className="mt-auto flex gap-2">
-        {doctor.address && <p> Address: {doctor.address} </p>}
-        {doctor.pharmacy && <p> Closest pharmacy: {doctor.pharmacy} </p>}
+      <div className="mt-auto flex flex-col gap-2">
+        {doctor.address && (
+          <p className="text-sm text-gray-400"> Address: {doctor.address} </p>
+        )}
+        {doctor.pharmacy && (
+          <p className="text-sm text-gray-400">
+            {" "}
+            Closest pharmacy: {doctor.pharmacy}{" "}
+          </p>
+        )}
         {doctor.contact && (
           <Link
             href={`tel:${doctor.phone}`}
-            className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-md shadow-sm hover:shadow-lg transition"
+            className="px-4 py-2  bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-md shadow-sm hover:shadow-lg transition"
           >
             Call
           </Link>

@@ -261,6 +261,123 @@
     "contact": ""
   },
   {
+    "name": "Peter Tawfik Fawzy",
+    "specialty": "Urology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201140356900"
+  },
+  {
+    "name": "Ahmed Badwy Othman",
+    "specialty": "Urology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+20111416859"
+  },
+  {
+    "name": "Amr Alam Eldeen",
+    "specialty": "Urology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201001997908"
+  },
+  {
+    "name": "Mohamed Abd Eltawab",
+    "specialty": "Urology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201141348460"
+  },
+  {
+    "name": "Ahmed Salah Eldeen",
+    "specialty": "Urology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201156857788"
+  },
+  {
+    "name": "Yasser Elnagar",
+    "specialty": "Urology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201558810234"
+  },
+  {
+    "name": "Hassani Ali Ahmed",
+    "specialty": "Urology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201113730199"
+  },
+  {
+    "name": " Philib Barsoom",
+    "specialty": "Cardiology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201224724646"
+  },
+   {
+    "name": "Nageh Mohamed",
+    "specialty": "Cardiology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201006855601"
+  },
+   {
+    "name": "Ashraf Shehata",
+    "specialty": "Cardiology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+20972467734"
+  },
+   {
+    "name": "Soaood El-Soghayer",
+    "specialty": "Cardiology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201114282704"
+  },
+   {
+    "name": "Ehab El-Darab",
+    "specialty": "Cardiology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201117474435"
+  },
+   {
+    "name": "Ahmed Ali",
+    "specialty": "Cardiology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201117425221"
+  },
+  {
     "name": "Abd Elazeez Yahia",
     "specialty": "Internal Medicine",
     "area": "Aswan",
@@ -385,6 +502,69 @@
     "arrivalTime": "",
     "pharmacy": "",
     "contact": "+201211625637"
+  },
+   {
+    "name": "Eshak Adly",
+    "specialty": "Pulmonology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+20972321584"
+  },
+  {
+    "name": "Shazly Boghdady",
+    "specialty": "Pulmonology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201211374865"
+  },
+  {
+    "name": "Omar Tarek Mahfouz",
+    "specialty": "Pulmonology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201097878972"
+  },
+  {
+    "name": "Yasser Abd-Elkareem",
+    "specialty": "Pulmonology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201118111268"
+  },
+  {
+    "name": "Amr Abu-Elhassan",
+    "specialty": "Pulmonology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201229353019"
+  },
+  {
+    "name": "Ahmed Medhat Gaafar",
+    "specialty": "Pulmonology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201126263581"
+  },
+  {
+    "name": "Yehia Ebrahim",
+    "specialty": "Pulmonology",
+    "area": "Aswan",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201275882199"
   },
   {
     "name": "Gamal Haky",
@@ -1296,6 +1476,15 @@
     "contact": ""
   },
   {
+    "name": "Ashraf Saleh",
+    "specialty": "Cardiology",
+    "area": "Komombo",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201152078850"
+  },
+  {
     "name": "Shaimaa Hussein Abdalla",
     "specialty": "Dermatology",
     "area": "Komombo",
@@ -1345,6 +1534,7 @@
     "specialty": "General Medicine",
     "area": "Komombo",
     "address": "Port-Saeid St. Bank Misr St.",
+    "location": "https://maps.app.goo.gl/Zpb5ay4fQa56e8XK7", 
     "arrivalTime": "All Week: From 4 to 6 And From 9",
     "pharmacy": "Raaft",
     "contact": ""
@@ -1354,6 +1544,7 @@
     "specialty": "General Medicine",
     "area": "Komombo",
     "address": "El-Sabaeen Beside Nermeen Pharmacy",
+    "location": "https://maps.app.goo.gl/NEEJHx4yExX6WmgZA", 
     "arrivalTime": "All Week: From 2 to 6 And From 8",
     "pharmacy": "Nermeen",
     "contact": ""
@@ -1363,6 +1554,7 @@
     "specialty": "General Medicine",
     "area": "Komombo",
     "address": "El-Zohour El Sharae El Gedeed Beside Yasser Abd-El Aty Pharmacy",
+    "location": "https://maps.app.goo.gl/Jj6rNifUZj3FiBeJA", 
     "arrivalTime": "All Week: From 1 to 4 And From 6 to 10",
     "pharmacy": "",
     "contact": ""
@@ -1372,6 +1564,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "Port-Saeid St. Beside El-Gamae El Qebly",
+    "location": "https://maps.app.goo.gl/amkc9CoX5Kr2mguj6", 
     "arrivalTime": "All Week: From 4 pm",
     "pharmacy": "El-Tayeb",
     "contact": "+201000800021"
@@ -1381,6 +1574,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour El-Amal Hospital",
+    "location": "https://maps.app.goo.gl/L6XHYpCG8FvCghnW8", 
     "arrivalTime": "All Week: From 2 to 3",
     "pharmacy": "El-Saeed Pharmacy",
     "contact": "+201119039421"
@@ -1390,6 +1584,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour Beside El Esawy Pharmacy",
+    "location": "https://maps.app.goo.gl/5hpfgAcVcBN1D6CP8", 
     "arrivalTime": "All Week: Starting from 2 pm",
     "pharmacy": "El-Esawy",
     "contact": ""
@@ -1399,6 +1594,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour Above Mohamed Qenawy Pharmacy",
+    "location": "https://maps.app.goo.gl/sZQFMHdjk3RFXQmh9", 
     "arrivalTime": "All Week: From 2 pm",
     "pharmacy": "Mohamed Qenawy",
     "contact": "+201144835708"
@@ -1408,6 +1604,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour El-Sharae El-Gedeed",
+    "location": "https://maps.app.goo.gl/Jj6rNifUZj3FiBeJA", 
     "arrivalTime": "Starting From: 1 pm",
     "pharmacy": "Yasser Abd-El Aty",
     "contact": "+201223276687"
@@ -1417,6 +1614,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "The End of Post St.",
+    "location": "https://maps.app.goo.gl/aw1oSBkA5rSUn4KdA", 
     "arrivalTime": "Tuesday: From 2 pm",
     "pharmacy": "Hend Formaica",
     "contact": ""
@@ -1426,6 +1624,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "Port-Saeid St. Beside El Bank El Ahly",
+    "location": "https://maps.app.goo.gl/9QWJLmZwMj34fzEy8", 
     "arrivalTime": "All Week: From 3 pm",
     "pharmacy": "El-Shefaa",
     "contact": ""
@@ -1435,6 +1634,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Sabaeen El-Central St. Above Menreet Pharmacy",
+    "location": "https://maps.app.goo.gl/e9C9vynxpT7XHChf8", 
     "arrivalTime": "All Week: From 11 to 3 Friday and Sunday: From 9 to 12",
     "pharmacy": "Menreet Eshak",
     "contact": "+201141257125"
@@ -1444,6 +1644,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour El-Sharae El-Gedeed Above Manar Abo-Elfotouh Pharmacy",
+    "location": "https://maps.app.goo.gl/Jj6rNifUZj3FiBeJA", 
     "arrivalTime": "All Week: Starting from 3 pm",
     "pharmacy": "",
     "contact": "+201120210706"
@@ -1453,6 +1654,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "Port-Saeid St. El-Kassaria St. Above El-Shazolia Pharmacy",
+    "location": "https://maps.app.goo.gl/FzhNhpVXR4GFZXAW7", 
     "arrivalTime": "All Week: From 2 to 5 And From 10 to 12",
     "pharmacy": "El-Shazolia",
     "contact": ""
@@ -1462,6 +1664,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "Port-Saeid St. El-Souq St. Above Bank Misr",
+    "location": "https://maps.app.goo.gl/Zpb5ay4fQa56e8XK7", 
     "arrivalTime": "All Week: From 4",
     "pharmacy": "Raaft",
     "contact": ""
@@ -1471,6 +1674,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "Port-Saeid St. El-Souq St. Above Bank Misr",
+    "location": "https://maps.app.goo.gl/Zpb5ay4fQa56e8XK7", 
     "arrivalTime": "",
     "pharmacy": "",
     "contact": ""
@@ -1480,6 +1684,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour El-Sharae El Gedeed Above Yasser Abd-El Aty Pharmacy",
+    "location": "https://maps.app.goo.gl/Jj6rNifUZj3FiBeJA", 
     "arrivalTime": "All Week: From 1 pm",
     "pharmacy": "Yasser Abd-El Aty",
     "contact": "+201006794347"
@@ -1489,6 +1694,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour Beside El-Amal Hospital",
+    "location": "https://maps.app.goo.gl/qckav3ffwcwT9KW37",
     "arrivalTime": "All Week: From 3 to 8",
     "pharmacy": "Mostafa Gaafar",
     "contact": ""
@@ -1498,6 +1704,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour In front of El Karma Pharmacy",
+    "location": "https://maps.app.goo.gl/oKJ5DJo8cqVeyMBD6", 
     "arrivalTime": "All Week: Starting From 5",
     "pharmacy": "El-Karma",
     "contact": "+201009021290"
@@ -1507,6 +1714,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour Souq El Khamees St. Above El Elyan Mall",
+    "location": "https://maps.app.goo.gl/mT6dPSc1LWMm4v3o9", 
     "arrivalTime": "All Week: After Al-Asr Prayer",
     "pharmacy": "Mona Ali",
     "contact": ""
@@ -1516,6 +1724,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "Port-Saeid St. Above El-Shefaa Pharmacy",
+    "location": "https://maps.app.goo.gl/tYfBbNmMFRJoL8Bz5",
     "arrivalTime": "All Week: From 4 to 9",
     "pharmacy": "El-Shefaa",
     "contact": ""
@@ -1525,6 +1734,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour Beside Dar El Tahaleel Lab Above Mostafa Gaafar Pharmacy",
+    "location": "https://maps.app.goo.gl/yj5hLhTCftA2L9zc8", 
     "arrivalTime": "All Week: From 4 pm",
     "pharmacy": "Mostafa Gaafar",
     "contact": "+201150424528"
@@ -1534,6 +1744,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour Above El-Gezeera Hypermall",
+    "location": "https://maps.app.goo.gl/9oVqGYYXNW6jLhFG7", 
     "arrivalTime": "Everyday: From 11 to 3",
     "pharmacy": "",
     "contact": "+201100763897"
@@ -1543,6 +1754,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour Beside Dar El Tahaleel Lab Above Mostafa Gaafar Pharmacy",
+    "location": "https://maps.app.goo.gl/yj5hLhTCftA2L9zc8", 
     "arrivalTime": "",
     "pharmacy": "Mostafa Gaafar",
     "contact": "+201151868521"
@@ -1552,6 +1764,7 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour El Sharae El Geeded Beside Yasser Abd-El Aty Pharmacy",
+    "location": "https://maps.app.goo.gl/Jj6rNifUZj3FiBeJA", 
     "arrivalTime": "All Week: From 12 to 3",
     "pharmacy": "Yasser Abd-El Aty",
     "contact": ""
@@ -1570,15 +1783,35 @@
     "specialty": "Gynecology",
     "area": "Komombo",
     "address": "El-Zohour Beside El-Amal Hospital",
+    "location": "https://maps.app.goo.gl/qckav3ffwcwT9KW37", 
     "arrivalTime": "Saturday Monday Wednesday: Starting from Al-Asr Prayer",
     "pharmacy": "Mostafa Gaafar",
     "contact": ""
+  },
+  {
+    "name": "Ahmed Sewalam",
+    "specialty": "Pulmonology",
+    "area": "Komombo",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201117910026"
+  },
+  {
+    "name": "Gamal Oraby",
+    "specialty": "Pulmonology",
+    "area": "Komombo",
+    "address": "",
+    "arrivalTime": "",
+    "pharmacy": "",
+    "contact": "+201128852002"
   },
   {
     "name": "Ahmed Abd-El Raouf",
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "Port-Saeid St. Above El Shefaa Pharmacy",
+    "location": "https://maps.app.goo.gl/tYfBbNmMFRJoL8Bz5", 
     "arrivalTime": "All Week: Starting From 1:30 pm",
     "pharmacy": "",
     "contact": ""
@@ -1588,6 +1821,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "Port-Saeid St. El Posta St.",
+    "location": "https://maps.app.goo.gl/6Nxt3ExmgYuUe5pV7", 
     "arrivalTime": "Sunday: From 2 to 5",
     "pharmacy": "El-Hosseiny",
     "contact": ""
@@ -1597,6 +1831,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "El-Zohour El Sharae El Gedeed",
+    "location": "https://maps.app.goo.gl/jgUwG18QTFaNf5X19", 
     "arrivalTime": "All Week: Starting From 8:30",
     "pharmacy": "Yasser Abd-El Aty",
     "contact": "+201128862833"
@@ -1606,6 +1841,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "Port-Saeid St. Beside Sherket Abo-El Fotouh",
+    "location": "https://maps.app.goo.gl/Cw2zCWH5KpBbEiQq6", 
     "arrivalTime": "All Week: Starting From 4 pm",
     "pharmacy": "El-Shefaa",
     "contact": ""
@@ -1615,6 +1851,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "Port-Saeid St. Beside Sherket El Kahraba",
+    "location": "https://maps.app.goo.gl/s4q4HaXDby5QrKqR9", 
     "arrivalTime": "All Week Except Sunday And Wednesday: Starting From 3 pm",
     "pharmacy": "El-Esawy",
     "contact": "+201110718874"
@@ -1624,6 +1861,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "Port-Saeid St. Beside Omar Afandy",
+    "location": "https://maps.app.goo.gl/jEfdUPNRn1qDqDbV9", 
     "arrivalTime": "Saturday Sunday Thursday: Starting From 4 pm Monday Tuesday Wednesday: Starting From 9 pm",
     "pharmacy": "El-Shefaa",
     "contact": ""
@@ -1633,6 +1871,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "El-Posta St. Above El Farsia Cafe",
+    "location": "https://maps.app.goo.gl/jxGuF4GRwgznHeZP8",
     "arrivalTime": "Saturday Monday Wednesday: Starting from 11 am",
     "pharmacy": "Makram",
     "contact": ""
@@ -1642,6 +1881,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "Port-Saeid St. In front of Omar Afandy",
+    "location": "https://maps.app.goo.gl/B7MsAoQJqdvwdF5e7", 
     "arrivalTime": "All Week: From 12 to 4 And After Al-Eishaa Prayer",
     "pharmacy": "El-Shefaa",
     "contact": "+201288836663"
@@ -1651,6 +1891,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "Port-Saeid St. El Posta St.",
+    "location": "https://maps.app.goo.gl/jxGuF4GRwgznHeZP8", 
     "arrivalTime": "All Week: From 3 to Al-Maghreb Prayer",
     "pharmacy": "Romany",
     "contact": "+201221268966"
@@ -1660,6 +1901,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "El-Sabaeen In front of El Magles El Mahaly",
+    "location": "https://maps.app.goo.gl/kCMBvRGL2CrjQRdw7", 
     "arrivalTime": "All Week: After 6 pm",
     "pharmacy": "El Mahaba",
     "contact": ""
@@ -1687,6 +1929,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "El-Zohour Beside Masqaf El-Abasia",
+    "location": "https://maps.app.goo.gl/dPpbYqEw1tphPe8QA", 
     "arrivalTime": "",
     "pharmacy": "El-Esawy",
     "contact": "+201129652571"
@@ -1696,6 +1939,7 @@
     "specialty": "Internal Medicine",
     "area": "Komombo",
     "address": "El-Zohour Beside El-Amal Hospital",
+    "location": "https://maps.app.goo.gl/Dbubauf6LBXs1XZb8", 
     "arrivalTime": "",
     "pharmacy": "Mostafa Gaafar",
     "contact": "+201129595968"
@@ -1795,6 +2039,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Zohour El Amal Hospital",
+    "location": "https://maps.app.goo.gl/Dbubauf6LBXs1XZb8", 
     "arrivalTime": "All Week Except Wednesday: From 1 to 4",
     "pharmacy": "El Saeed",
     "contact": ""
@@ -1804,6 +2049,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Zohour El Sharae El Geeded",
+    "location": "https://maps.app.goo.gl/jgUwG18QTFaNf5X19", 
     "arrivalTime": "All Week: From 12 to 3 And From 6 to 8",
     "pharmacy": "Yasser Abd-El Aty",
     "contact": "+201096821777"
@@ -1813,6 +2059,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Zohour Beside El-Kalam Pharmacy Fourth Floor",
+    "location": "https://maps.app.goo.gl/jgUwG18QTFaNf5X19", 
     "arrivalTime": "All Week: From 12 to 3 Friday: From 7 to 10",
     "pharmacy": "El-Kalam",
     "contact": ""
@@ -1822,6 +2069,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Zohour El Sharae El Geeded El Alaily Mall",
+    "location": "https://maps.app.goo.gl/jgUwG18QTFaNf5X19", 
     "arrivalTime": "All Week: From 8 pm",
     "pharmacy": "Manar Abo-El Fotouh",
     "contact": ""
@@ -1830,7 +2078,8 @@
     "name": "Kawthar Khamees",
     "specialty": "Pediatrics",
     "area": "Komombo",
-    "address": "The End of Post St. Above Hend Formaica Pharmacy",
+    "address": "The End of Posta St. Above Hend Formaica Pharmacy",
+    "location": "https://maps.app.goo.gl/BkoRhvuK412Entub7", 
     "arrivalTime": "All Week: From 12 to 2",
     "pharmacy": "Hend Formaica",
     "contact": ""
@@ -1840,6 +2089,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Zohour El Amal Hospital",
+    "location": "https://maps.app.goo.gl/Dbubauf6LBXs1XZb8", 
     "arrivalTime": "All Week: From 12 to 5 And From 7 to 11",
     "pharmacy": "El Saeed",
     "contact": "+201020720782"
@@ -1849,6 +2099,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "Above Faisal Bank",
+    "location": "https://maps.app.goo.gl/wvNnBhm3wLWLhyFo8", 
     "arrivalTime": "",
     "pharmacy": "Raaft",
     "contact": ""
@@ -1858,6 +2109,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Sabaeen Beside Nasser Transportation",
+    "location": "https://maps.app.goo.gl/ofrXcqvEd6pMQ4np7", 
     "arrivalTime": "All Week: From 12 to 3",
     "pharmacy": "Menreet Eshak",
     "contact": ""
@@ -1876,6 +2128,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "Port-Saeid St. Above El-Esawy Pharmacy",
+    "location": "https://maps.app.goo.gl/fKCrFWALxcUJhJX78", 
     "arrivalTime": "All Week: From 1 to 7",
     "pharmacy": "El-Esawy",
     "contact": "+201118988622"
@@ -1885,6 +2138,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Zohour El Sharae El Geeded Beside Yasser Abd-El Aty Pharmacy",
+    "location": "https://maps.app.goo.gl/hhewzAxva2qW258w5", 
     "arrivalTime": "All Week: From 1 to 4 And From 8 to 12",
     "pharmacy": "Mostafa Gaafar",
     "contact": "+201003072230"
@@ -1894,6 +2148,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Zohour Beside El-Esawy Pharmacy",
+    "location": "https://maps.app.goo.gl/dM4D5woJq5EbeaCA8", 
     "arrivalTime": "All Week Except Friday: Starting from 3 pm",
     "pharmacy": "El-Esawy",
     "contact": ""
@@ -1903,6 +2158,7 @@
     "specialty": "Pediatrics",
     "area": "Komombo",
     "address": "El-Zohour El Amal Hospital St.",
+    "location": "https://maps.app.goo.gl/rQnZ9RDGtwaiyQS98", 
     "arrivalTime": "All Week: From 10 to 3",
     "pharmacy": "Mostafa Gaafar",
     "contact": "+201557440936"

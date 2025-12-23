@@ -28,6 +28,7 @@ async function doctorsSetUp() {
                 specialty: doctor.specialty || "",
                 area: doctor.area || "",
                 address: doctor.address || "",
+                location: doctor.location || "", 
                 arrivalTime: doctor.arrivalTime || "",
                 pharmacy: doctor.pharmacy || "",
                 contact: doctor.contact || "",
