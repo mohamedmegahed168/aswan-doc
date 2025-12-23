@@ -28,7 +28,7 @@ export default function About() {
         <div className="flex flex-col gap-5">
           <h2
             id="about-title"
-            className="text-3xl md:text-4xl font-extrabold text-center tracking-tight"
+            className="text-3xl md:text-4xl font-bold text-center tracking-tight"
           >
             Why I built this — to make finding healthcare in Aswan simple and
             reliable.
@@ -38,9 +38,24 @@ export default function About() {
             aria-hidden="true"
           />
           <p className="text-gray-700 text-center leading-relaxed">
-            I grew up in Aswan and built Aswan‑Doc to make it easier for
-            residents and visitors to find doctors, clinics, and pharmacies —
-            with verified information so you can choose confidently.
+            My name is Mohamed Megahed. I grew up in Aswan—a city I love deeply
+            and proudly call home. And as a developer from Aswan, I built
+            Aswan-Med in response to a simple but frustrating reality: finding a
+            doctor here is often harder than it should be.
+          </p>
+          <p className="text-gray-700 text-center leading-relaxed">
+            I built this platform as a small contribution to our beloved city,
+            with the hope of making everyday life a little easier for its people
+            and visitors alike. By bringing doctors, clinics, and pharmacies
+            together in one trusted place, Aswan-Doc aims to support our
+            community with clear, verified information you can rely on.
+          </p>
+          <p className="text-gray-700 text-center leading-relaxed">
+            I would like to express my deep gratitude to Dr. Mohamed Mahmoud.
+            This website would not have been possible without his generous
+            support and dedication. The extensive data he gathered on doctors
+            across Aswan formed the foundation of Aswan-Doc and made bringing
+            this project to life possible
           </p>
         </div>
         <motion.div

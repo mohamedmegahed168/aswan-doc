@@ -12,62 +12,15 @@ import {
   getDoc,
   limit,
 } from "firebase/firestore";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
-function DoctorCard({ doctor, index = 0 }) {
-  return (
-    <div
-      style={{ animationDelay: `${index * 70}ms` }}
-      className="opacity-0 animate-fade-up bg-white rounded-xl shadow-md p-5 flex flex-col gap-4 transform transition duration-300 hover:scale-105 hover:shadow-xl"
-    >
-      <div className="flex items-center gap-4">
-        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-pink-500 text-white flex items-center justify-center font-semibold text-lg">
-          {doctor.name ? doctor.name.charAt(0).toUpperCase() : "D"}
-        </div>
-        <div>
-          <h3 className="font-semibold text-lg">{doctor.name}</h3>
-          <p className="text-sm text-slate-500">{doctor.speciality}</p>
-        </div>
-        <div className="ml-auto text-sm text-slate-400">
-          {doctor.city || "—"}
-        </div>
-      </div>
-
-      <div className="text-sm text-slate-600">City: {doctor.city || "—"}</div>
-
-      {doctor.phone && (
-        <div className="flex gap-3">
-          <a
-            href={`tel:${doctor.phone}`}
-            className="text-sm text-indigo-600 hover:underline"
-          >
-            Call
-          </a>
-          <a
-            href={`mailto:${doctor.email || ""}`}
-            className="text-sm text-indigo-600 hover:underline"
-          >
-            Email
-          </a>
-        </div>
-      )}
-
-      <div className="mt-auto flex gap-2">
-        <button className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-md shadow-sm hover:shadow-lg transition">
-          Book
-        </button>
-        <button className="px-4 py-2 border rounded-md">View</button>
-      </div>
-    </div>
-  );
-}
 
 export default function DashboardPage() {
   const [user, setUser] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
-  const [city, setCity] = useState("");
-  const [speciality, setSpeciality] = useState("");
+  const [area, setArea] = useState("");
+  const [specialty, setSpecialty] = useState("");
   const [loading, setLoading] = useState(true);
   const [doctors, setDoctors] = useState([]);
   const [error, setError] = useState("");
@@ -109,8 +62,8 @@ export default function DashboardPage() {
       setError("");
       try {
         const filters = [];
-        if (city) filters.push(where("city", "==", city));
-        if (speciality) filters.push(where("speciality", "==", speciality));
+        if (area) filters.push(where("area", "==", area));
+        if (specialty) filters.push(where("specialty", "==", specialty));
         const q =
           filters.length > 0
             ? query(doctorsRef, ...filters)
@@ -126,7 +79,7 @@ export default function DashboardPage() {
       }
     }
     fetchDoctors();
-  }, [city, speciality]);
+  }, [area, specialty]);
 
   async function handleSignOut() {
     await signOut(auth);
@@ -134,8 +87,8 @@ export default function DashboardPage() {
   }
 
   function resetFilters() {
-    setCity("");
-    setSpeciality("");
+    setArea("");
+    setSpecialty("");
   }
 
   return (
@@ -179,8 +132,8 @@ export default function DashboardPage() {
             whileHover={{ scale: 1.02 }}
             whileFocus={{ borderColor: "#4346f1ff" }}
             className=" rounded-xl p-2 border border-gray-400 cursor-pointer w-full md:w-64 outline-none font-normal"
-            onChange={(e) => setCity(e.target.value)}
-            value={city}
+            onChange={(e) => setArea(e.target.value)}
+            value={area}
           >
             <option value="">All Cities</option>
             <option value="Komombo">Komombo</option>
@@ -192,14 +145,15 @@ export default function DashboardPage() {
             whileHover={{ scale: 1.02 }}
             whileFocus={{ borderColor: "#4346f1ff " }}
             className="border border-gray-400 cursor-pointer outline-none font-normal p-2 rounded-xl w-full md:w-64"
-            onChange={(e) => setSpeciality(e.target.value)}
-            value={speciality}
+            onChange={(e) => setSpecialty(e.target.value)}
+            value={specialty}
           >
             <option value="">All Specialities</option>
-            <option value="Cardiologist">Cardiologist</option>
-            <option value="Dermatologist">Dermatologist</option>
-            <option value="Pediatrician">Pediatrician</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Dermatology">Dermatology</option>
+            <option value="Pediatrics">Pediatrics</option>
             <option value="Internal Medicine">Internal Medicine</option>
+            <option value="Gynecology"> Gynecology</option>
           </motion.select>
 
           <div className="ml-auto flex gap-2">
@@ -219,7 +173,19 @@ export default function DashboardPage() {
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-6">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="skeleton rounded-xl p-4 h-36 shadow" />
+              <div
+                key={i}
+                className="rounded-xl p-4 bg-white shadow animate-fade-in"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="skeleton w-14 h-14 rounded-full" />
+                  <div className="flex-1">
+                    <div className="skeleton h-4 w-3/4 mb-2 rounded" />
+                    <div className="skeleton h-3 w-1/2 rounded" />
+                  </div>
+                </div>
+                <div className="mt-3 skeleton w-full rounded-xl aspect-[16/9] min-h-[120px] md:min-h-[140px]" />
+              </div>
             ))}
           </div>
         ) : error ? (
@@ -236,6 +202,72 @@ export default function DashboardPage() {
           </div>
         )}
       </main>
+    </div>
+  );
+}
+function DoctorCard({ doctor, index = 0 }) {
+  const specialtyPhotos = {
+    Cardiology: "/cardiology.jpg",
+    Dermatology: "/dermatology.jpg",
+  };
+  const photos =
+    doctor.photoURL ||
+    doctor.photo ||
+    specialtyPhotos[doctor.specialty] ||
+    "/default.jpg";
+  return (
+    <div
+      style={{ animationDelay: `${index * 70}ms` }}
+      className="group opacity-0 animate-fade-up bg-white rounded-xl shadow-md p-5 flex flex-col gap-4 transform transition duration-300 hover:scale-105 hover:shadow-xl"
+    >
+      <div className="flex items-center gap-4">
+        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-pink-500 text-white flex items-center justify-center font-semibold text-lg">
+          {doctor.name ? doctor.name.charAt(0).toUpperCase() : "D"}
+        </div>
+        <div>
+          <h3 className="font-semibold text-lg">{doctor.name}</h3>
+          <p className="text-sm text-slate-500">{doctor.specialty}</p>
+        </div>
+        <div className="ml-auto text-sm text-slate-400">
+          {doctor.area || "—"}
+        </div>
+      </div>
+
+      {/* primary image: responsive aspect ratio, overlay, and subtle zoom on hover */}
+      <div className="w-full relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/9] min-h-[120px] md:min-h-[140px]">
+        <Image
+          src={photos}
+          fill
+          sizes="(max-width: 640px) 100vw, 50vw"
+          alt={doctor.name ? `Photo of Dr. ${doctor.name}` : doctor.id}
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute bottom-3 left-3 text-white text-sm drop-shadow-md">
+          <div className="font-semibold">{doctor.name}</div>
+          <div className="text-xs opacity-90">{doctor.specialty}</div>
+        </div>
+      </div>
+      <div className="mt-auto flex gap-2">
+        {doctor.address && <p> Address: {doctor.address} </p>}
+        {doctor.pharmacy && <p> Closest pharmacy: {doctor.pharmacy} </p>}
+        {doctor.contact && (
+          <Link
+            href={`tel:${doctor.phone}`}
+            className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-md shadow-sm hover:shadow-lg transition"
+          >
+            Call
+          </Link>
+        )}
+        {doctor.location && (
+          <Link
+            href="https://www.google.com/maps"
+            className="px-4 py-2 border rounded-md"
+          >
+            View on maps
+          </Link>
+        )}
+      </div>
     </div>
   );
 }

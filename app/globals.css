@@ -34,7 +34,7 @@ html,
 body {
   width: 100%;
   margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
 body {
@@ -44,7 +44,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure content and media never exceed viewport width */
 main,
 #__next {
   min-width: 0;
@@ -70,7 +69,7 @@ a {
     transform 160ms ease,
     box-shadow 160ms ease;
 }
-/* Animations and utilities for the dashboard */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -97,7 +96,6 @@ a {
   animation: fadeIn 520ms ease both;
 }
 
-/* Skeleton shimmer */
 @keyframes shimmer {
   0% {
     background-position: 200% 0;
