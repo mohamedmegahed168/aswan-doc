@@ -104,26 +104,23 @@ export default function HeroNavbar() {
             transition={{ duration: 0.18 }}
           >
             <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
-              <Link
-                href="#home"
-                className="py-2 hover:text-[var(--color-primary)]"
-                onClick={closeMenu}
-              >
+              <Link href="#home" onClick={closeMenu}>
                 Home
               </Link>
-              <Link
-                href="#services"
-                className="py-2 hover:text-[var(--color-primary)]"
-                onClick={closeMenu}
-              >
+              <Link href="#services" onClick={closeMenu}>
                 Services
               </Link>
-              <Link
-                href="#about"
-                className="py-2 hover:text-[var(--color-primary)]"
-                onClick={closeMenu}
-              >
+              <Link href="#about" onClick={closeMenu}>
                 About
+              </Link>
+              <Link href="/dashboard" onClick={closeMenu}>
+                Dashboard
+              </Link>
+              <Link href="#faq" onClick={closeMenu}>
+                Faq
+              </Link>
+              <Link href="#contact" onClick={closeMenu}>
+                Contact
               </Link>
               <div className="pt-2 flex gap-3">
                 <Link

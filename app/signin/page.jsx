@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { auth } from "@/storage/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
 
 function SignIn() {
   const router = useRouter();
@@ -147,6 +148,17 @@ function SignIn() {
                 {errors.password}
               </p>
             )}
+          </div>
+          <div className="text-md font-normal">
+            <p>
+              don&apos;t have email?
+              <Link
+                href="/signup"
+                className="text-[var(--color-primary)] hover:text-[var(--primary-dark)] pl-1"
+              >
+                Sign Up
+              </Link>
+            </p>
           </div>
           <motion.button
             type="submit"

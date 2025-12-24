@@ -295,7 +295,7 @@ function DoctorCard({ doctor, index = 0 }) {
           {phone && (
             <Link
               href={`tel:${phone}`}
-              className="px-5 py-2 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700"
+              className="px-5 py-2 bg-[var(--color-primary)] text-white rounded-xl shadow-sm hover:bg-[var(--primary-dark)]"
             >
               Call
             </Link>

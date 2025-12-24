@@ -6,6 +6,7 @@ import { db, auth } from "@/storage/firebase";
 import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
 function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -203,6 +204,17 @@ function SignUp() {
                 {errors.password && (
                   <p className="text-sm text-red-500 pl-2">{errors.password}</p>
                 )}
+              </div>
+              <div className="text-md font-normal">
+                <p>
+                  Do you have an account already?
+                  <Link
+                    href="/signin"
+                    className="pl-1 text-[var(--color-primary)] hover:text-[var(--primary-dark)]"
+                  >
+                    Sign In
+                  </Link>
+                </p>
               </div>
               <motion.button
                 type="submit"

@@ -7,7 +7,7 @@ function Faq() {
     {
       question: "Is Aswan-Med free to use?",
       answer:
-        "Yes, Aswan-Med is a vaoluntary website which is meant to help the people in our beloved city",
+        "Yes, Aswan-Med is a voluntary website which is meant to help the people in our beloved city",
     },
     {
       question: "How do I find a doctor?",

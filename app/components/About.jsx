@@ -61,14 +61,14 @@ export default function About() {
             I built this platform as a small contribution to our beloved city,
             with the hope of making everyday life a little easier for its people
             and visitors alike. By bringing doctors, clinics, and pharmacies
-            together in one trusted place, Aswan-Doc aims to support our
+            together in one trusted place, Aswan-Med aims to support our
             community with clear, verified information you can rely on.
           </p>
           <p className="text-gray-700 text-center leading-relaxed">
             I would like to express my deep gratitude to Dr. Mohamed Mahmoud.
             This website would not have been possible without his generous
             support and dedication. The extensive data he gathered on doctors
-            across Aswan formed the foundation of Aswan-Doc and made bringing
+            across Aswan formed the foundation of Aswan-Med and made bringing
             this project to life possible
           </p>
         </div>
